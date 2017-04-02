@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1491150398 source:c:\users\nélio\documents\escola\spc\ele_esta_impedido.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+
