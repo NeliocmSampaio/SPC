@@ -1,11 +1,12 @@
 /*
  * Nome: Nélio Cezar Muniz Sampaio
  * Matricula: 2015042150
- * Codigo do Problema: IREVIR   Problema: Ir e vir
+ * Codigo do Problema: ENERGIA  Problema: Transmissão de Energia
  *
- * O algoritmo gera um grafo a partir das intercecções e vias lidas e executa
- * uma busca em profundidade para cada vértice, verificando se, a partir do
- * vértice, pode-se alcançar todos os outros.
+ * O algoritmo gera um grafo a partir das estações e linhas lidas.
+ * É rodada uma busca em profundidade a partir da primeira estação e
+ * verifica-se se todos os vértices são encontrados na busca, caso
+ * sejam, a resposta é normal, caso contrário, falha.
  * */
 
 #include <iostream>
@@ -82,8 +83,17 @@ int conectado(TGrafo *G)
     int cont=0;
     //int vertice = 1;
 
+    dfs(G, cores, &cont, 1);
+
+    if(cont!=G->v)
+    {
+        return 0;
+    }//if
+
+    return 1;
+
     //cout << "debug 2" << endl;
-    for(int i=1; i<=(G->v); i++)
+    /*for(int i=1; i<=(G->v); i++)
     {
         cont = 0;
         zeraVetor(cores, G->v+1);
@@ -93,9 +103,7 @@ int conectado(TGrafo *G)
         {
             return 0;
         }
-    }
-
-    return 1;
+    }*/
 }
 
 void printGrafo(TGrafo *G)
@@ -116,35 +124,42 @@ int main()
 {
     TGrafo *G = (TGrafo*) malloc(sizeof(TGrafo));
 
-    int n, m;
-    int a, b, p;
+    int e, l;
+    int a, b;
+    int resultado, cont=0;
 
-    cin >> n;
+    cin >> e;
+    cin >> l;
 
-    while(n!=0)
+
+    while(e!=0)
     {
-        fGrafoVazio(G, n);
+        cont ++;
+        fGrafoVazio(G, e);
         //printGrafo(G);
-        cin >> m;
 
-
-        for(int i=0; i<m; i++)
+        for(int i=0; i<l; i++)
         {
             cin >> a;
             cin >> b;
-            cin >> p;
 
             insereAresta(a, b, G);
-            if(p==2) insereAresta(b, a, G);
+            insereAresta(b, a, G);
+        }//for
+
+        resultado = conectado(G);
+        if(resultado==1)
+        {
+            cout << "Teste " << cont << endl;
+            cout << "normal" << endl << endl;
+        }else
+        {
+            cout << "Teste " << cont << endl;
+            cout << "falha" << endl << endl;
         }
-        //cout << "debug 1" << endl;
-        /*printGrafo(G);
-        getchar();
-        getchar();*/
 
-        cout << conectado(G) << endl;
-
-        cin >> n;
+        cin >> e;
+        cin >> l;
     }
 
     free(G);
