@@ -1,15 +1,17 @@
 /*
  * Nome: Nélio Cezar Muniz Sampaio
  * Matricula: 2015042150
- * Codigo do Problema: MESA     Problema: Mesa da Sra Montagny!
+ * Codigo do Problema: PEDAGIO      Problema: Pedágio
  *
- * O algoritmo gera um grafo com as pessoas lidas como vértices e
- * as relações de amizade como arestas. Assim, utiliza-se uma busca em
- * largura para verificar se o grafo é bipartido. Caso seja, a resposta
- * é sim, e não, caso contrário.
+ * O algoritmo gera um grafo com as cidades como vértices e as estradas como
+ * arestas. Calcula-se então a distância mínima da origem para todas as cidades
+ * com uma busca em largura, e imprime as cidades cuja distância é menor que o
+ * pedágio máximo.
  * */
 
 #include <iostream>
+
+#define INFINITE 3000
 
 using namespace std;
 
@@ -101,7 +103,7 @@ void insereAresta(int v, int w, TGrafo *G)
     (G->a)++;
 }//insereAresta()
 
-int proxAdj(TGrafo *G, int cores[], int linha, int coluna)
+int proxAdjNVisitado(TGrafo *G, int *cores, int linha, int coluna)
 {
     for(int i=coluna; i<=G->v; i++)
     {
@@ -122,12 +124,12 @@ void dfs(TGrafo *G, int cores[], int *cont, int vertice)
     cores[vertice] = 1;
     (*cont) ++;
 
-    prox = proxAdj(G, cores, vertice, 1);
+    prox = proxAdjNVisitado(G, cores, vertice, 1);
     while(prox!=0)
     {
         dfs(G, cores, cont, prox);
 
-        prox = proxAdj(G, cores, vertice, prox+1);
+        prox = proxAdjNVisitado(G, cores, vertice, prox + 1);
     }//while
 
     cores[vertice] = 2;
@@ -138,6 +140,14 @@ void zeraVetor(int v[], int tam)
     for(int i=0; i<tam; i++)
     {
         v[i] = 0;
+    }
+}//zeraVetor()
+
+void setaVetor(int v[], int tam, int val)
+{
+    for(int i=0; i<=tam; i++)
+    {
+        v[i] = val;
     }
 }//zeraVetor()
 
@@ -171,7 +181,7 @@ void printGrafo(TGrafo *G)
     }
 }//printGrafo()
 
-int proxBipartido(TGrafo *G, int linha, int coluna)
+int proxAdj(TGrafo *G, int linha, int coluna)
 {
     for(int i=coluna; i<=G->v; i++)
     {
@@ -179,7 +189,7 @@ int proxBipartido(TGrafo *G, int linha, int coluna)
             return i;
     }//for
     return 0;
-}//prox()
+}//proxAdj()
 
 int bfs(TGrafo *G, int cores[], int cBipartido[], int vertice, int *flag, TFila *f)
 {
@@ -189,17 +199,17 @@ int bfs(TGrafo *G, int cores[], int cBipartido[], int vertice, int *flag, TFila 
     cores[vertice] = 1;
 
     //pinta vertices adjacentes e enfileira
-    adj = proxAdj(G, cores, vertice, 1);
+    adj = proxAdjNVisitado(G, cores, vertice, 1);
     while(adj!=0) {
         //efileira
         if (cores[adj] == 0) {
             cores[adj] = 2;
             enfileira(f, adj);
         }
-        adj = proxAdj(G, cores, vertice, adj+1);
+        adj = proxAdjNVisitado(G, cores, vertice, adj + 1);
     }
 
-    adj = proxBipartido(G, vertice, 1);
+    adj = proxAdj(G, vertice, 1);
     while(adj!=0)
     {
         //pinta
@@ -213,7 +223,7 @@ int bfs(TGrafo *G, int cores[], int cBipartido[], int vertice, int *flag, TFila 
                 return 0;
             else
                 cBipartido[adj] = 1;
-        adj = proxBipartido(G, vertice, adj+1);
+        adj = proxAdj(G, vertice, adj + 1);
     }//while
 
     cores[vertice] = 3;
@@ -243,31 +253,93 @@ int bipartido(TGrafo *G)
     return resultado;
 }//bipartido()
 
+void bfsDistancia(TGrafo *G, int cores[], int vertice,
+                 int *flag, int distancias[], TFila *f)
+{
+    int adj;
+    int prox;
+    cores[vertice] = 1;
+
+    //enfileira
+    adj = proxAdjNVisitado(G, cores, vertice, 1);
+    while(adj!=0) {
+        //enfileira
+        if (cores[adj] == 0) {
+            cores[adj] = 2;
+            enfileira(f, adj);
+        }
+        adj = proxAdjNVisitado(G, cores, vertice, adj + 1);
+    }//while
+
+    adj=proxAdj(G, vertice, 1);
+    while(adj!=0)
+    {
+        if((distancias[adj]>distancias[vertice]+1) && (distancias[adj]!=0))
+        {
+            distancias[adj] = distancias[vertice]+1;
+        }//if
+
+        adj=proxAdj(G, vertice, adj+1);
+    }//while
+
+    cores[vertice] = 3;
+    prox = desenfileira(f);
+    if(prox!=0)
+        bfsDistancia(G, cores, prox, flag, distancias, f);
+}//bfsDistancias()
+
+void printDistancias(int v[], int tam, int p, int inicial)
+{
+    int flag = 0;
+    for(int i=1; i<=tam; i++)
+    {
+        if((v[i]<=p)&&(i!=inicial))
+        {
+            if(flag==1)
+            {
+                //printf(" ");
+                cout << " ";
+            }//if
+            flag=1;
+            //printf("%d", i);
+            cout << i;
+        }//if
+    }//for
+    cout << endl;
+}//printDistancias()
+
+void calculaDistancias(TGrafo *G, int inicial, int distancias[])
+{
+    int cores[60]={0};
+    int flag = 0;
+    int resultado=1;
+    TFila *f = (TFila*) malloc(sizeof(TFila));
+    setaVetor(distancias, G->v, INFINITE);
+    distancias[inicial] = 0;
+
+    fFilaVazia(f);
+    bfsDistancia(G, cores, inicial, &flag, distancias,  f);
+
+    free(f);
+}
+
 int main()
 {
     TGrafo *G = (TGrafo*) malloc(sizeof(TGrafo));
 
-    int n, m;
+    int distancias[60];
+    int c, e, l, p;
+    int cont=0;
     int a, b;
-    int resultado, cont=0;
 
-    /*cin >> n;
-    cin >> m;*/
+    cin >> c >> e >> l >> p;
 
-
-    while(scanf("%d %d", &n, &m)!=EOF)
+    while(c!=0)
     {
-
-        /*scanf("%d %d", &n, &m);
-        if(n==EOF)
-        {
-            break;
-        }//if*/
-
         cont ++;
-        fGrafoVazio(G, n);
+        fGrafoVazio(G, c);
 
-        for(int i=0; i < m; i++)
+        for(int i=0; i < e; i++)
         {
             scanf("%d", &a);
             scanf("%d", &b);
@@ -276,21 +348,13 @@ int main()
             insereAresta(b, a, G);
         }//for
 
-        resultado = bipartido(G);
-        if(resultado==1)
-        {
-            printf("Instancia %d\n", cont);
-            printf("sim\n\n");
-            /*cout << "Instancia " << cont << endl;
-            cout << "sim" << endl << endl;*/
-        }else
-        {
-            printf("Instancia %d\n", cont);
-            printf("nao\n\n");
-            /*cout << "Instancia " << cont << endl;
-            cout << "nao" << endl << endl;*/
-        }
+        //printGrafo(G);
+        calculaDistancias(G, l, distancias);
+        cout << "Teste " << cont << endl;
+        printDistancias(distancias, c, p, l);
+        cout << endl;
 
+        cin >> c >> e >> l >> p;
     }
 
     free(G);
