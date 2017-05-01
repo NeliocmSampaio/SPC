@@ -10,6 +10,7 @@ class Grafo{
 private :
     int v;  //Número de vértices
     std::list<std::pair<int,int>> * adj;
+    int flow[MAX_VERTICES][MAX_VERTICES];
 
 public:
     Grafo(int v)
@@ -77,7 +78,30 @@ public:
         return dist[destino];
     }//dikstra()
 
+    Grafo Atualiza_Grafo_Residual()
+    {
+        Grafo g(v);
 
+        for(int i=0; i<v; i++)
+        {
+            std::list<std::pair<int, int>>::iterator it;
+
+            for(it=adj[i].begin(); it!=adj[i].end(); it++) {
+                //obtém o vértice adjacente
+                int v = it->first;
+                int custo_aresta = it->second;
+
+                g.addAresta(i, v, 0);
+            }//for
+        }//for
+
+        return g;
+    }
+
+    void Ford_Fulkerson()
+    {
+
+    }
 
     void leGrafo(int arestas)
     {

@@ -1,3 +1,19 @@
+/*
+ * Nome: Nélio Cezar Muniz Sampaio
+ * Matricula: 2015042150
+ * Codigo do Problema: CAVALOS      Problema: A lei vai a Cavalo!
+ *
+ * O algoritmo gera um grafo bipartido com as relações entre soldados e cavalos, cria arestas
+ * da origem para cada soldado com peso 1 e arestas com peso igual a quantidade de soldados
+ * que cada cavalo pode ser montado até um vértice destino. Nesse grafo, com o algoritmo de
+ * fluxo máximo de Edmonds Karp, obtém-se o número máximo de soldados que podem ter um cavalo
+ * para montar.
+ *
+ * Obs.: A implementação do algoritmo utilizada foi a passada pelo monitor da disciplina
+ * Lucas Jose Carneiro Maciel.
+ *
+ * */
+
 #include <bits/stdc++.h>
 
 #define MAXV 210 // the maximum number of vertices
@@ -126,16 +142,16 @@ Fazemos:
 void addaresta(int a, int b, int f)
 {
     g.edges[a].push_back(b); // Adiciona a aresta de 0 para 1
-    g.edges[a].push_back(b); // NAO SE ESQUECA DE ADICIONAR A ARESTA DE VOLTA: caso esqueca o algoritmo
+    g.edges[b].push_back(a); // NAO SE ESQUECA DE ADICIONAR A ARESTA DE VOLTA: caso esqueca o algoritmo
     // nao sera capaz de corrigir o fluxo e a resposta ficará incorreta.
     g.flow[a][b] = f;        // Altere a capacidade da aresta via a matriz de adjacencia 'flow'
 }
 
 void origemSold(int s, int c)
 {
-    for(int i=1; i<=s; i++)
+    for(int i=c+1; i<=s+c; i++)
     {
-        addaresta(0, i+c, 1);
+        addaresta(0, i, 1);
     }
 }//origemCav()
 
@@ -153,10 +169,9 @@ int main(){
     int cavalos[110];
     int cont=1;
 
-    init(g, MAXV);
-
     while(scanf("%d %d %d", &n, &m, &k)!=EOF)
     {
+        init(g, n+m+2);
 
         for (int i=1; i<=n; i++)
         {

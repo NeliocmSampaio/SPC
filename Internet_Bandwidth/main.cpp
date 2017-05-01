@@ -1,11 +1,10 @@
 /*
  * Nome: Nélio Cezar Muniz Sampaio
  * Matricula: 2015042150
- * Codigo do Problema: MTOTALF  Problema: Total Flow
+ * Codigo do Problema: 820  Problema: Internet Bandwidth
  *
- * O algoritimo transforma a entrada em um grafo sendo os encaixes dos canos os vértices
- * e os canos as arestas com os pesos equivalentes à capacidade dos canos. No grafo gerado,
- * executa-se o algoritmo de fluxo máximo de Edmond's Karp para obter o fluxo máximo nos canos.
+ * O algoritmo gera um grafo a partir da entrada e utiliza o algoritmo de fluxo máximo de
+ * Edmonds Karp para obter o fluxo máximo entre o vértice source e destination.
  *
  * Obs.: A implementação do algoritmo utilizada foi a passada pelo monitor da disciplina
  * Lucas Jose Carneiro Maciel.
@@ -121,12 +120,14 @@ void addaresta(int a, int b, int f)
     if(g.flow[a][b]!= 0)
     {
         g.flow[a][b] = g.flow[a][b] + f;
+        g.flow[b][a] = g.flow[b][a] + f;
     } else
     {
         g.edges[a].push_back(b);    // Adiciona a aresta de 0 para 1
-        g.edges[a].push_back(b);    // NAO SE ESQUECA DE ADICIONAR A ARESTA DE VOLTA: caso esqueca o algoritmo
+        g.edges[b].push_back(a);    // NAO SE ESQUECA DE ADICIONAR A ARESTA DE VOLTA: caso esqueca o algoritmo
         // nao sera capaz de corrigir o fluxo e a resposta ficará incorreta.
         g.flow[a][b] = f;           // Altere a capacidade da aresta via a matriz de adjacencia 'flow'
+        g.flow[b][a] = f;
     }
 }
 
@@ -136,28 +137,23 @@ int main(){
     int a, b, f;
     int begin, end, c;
     int cont=1;
-    init(g, MAXV);
 
-    //cin >> n;
+
     scanf("%d", &n);
 
     while(n!=0) {
-        //cin >> begin >> end >> c;
+        init(g, n+5);
+
         scanf("%d %d %d", &begin, &end, &c);
 
         for (int i = 0; i < c; i++) {
-            //cin >> a >> b >> f;
             scanf("%d %d %d", &a, &b, &f);
             addaresta(a, b, f);
         }//for
 
         printf("Network %d\n", cont);
-        printf("The bandwidth is %d\n", maxFlow(g, begin, end));
-        //cout << "Network " << cont << endl;
-        //cout << "The bandwidth is ";
-        //cout << maxFlow(g, begin, end) << endl;
+        printf("The bandwidth is %d.\n\n", maxFlow(g, begin, end));
 
-        //cin >> n;
         scanf("%d", &n);
         cont ++;
     }//while

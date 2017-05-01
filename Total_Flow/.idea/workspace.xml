@@ -12,8 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cd2ba0e-1468-412a-a1aa-bff1ad214cd3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../A_Lei_Vai_a_Cavalo/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Djikstra_Grafo_minha_tentativa/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Djikstra_Grafo_minha_tentativa/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../A_Lei_Vai_a_Cavalo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../A_Lei_Vai_a_Cavalo/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../A_Lei_Vai_a_Cavalo/main.cpp" afterPath="$PROJECT_DIR$/../A_Lei_Vai_a_Cavalo/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Internet_Bandwidth/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Internet_Bandwidth/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Internet_Bandwidth/main.cpp" afterPath="$PROJECT_DIR$/../Internet_Bandwidth/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MaxFlow/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../MaxFlow/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MaxFlow/MaxMGraph.cpp" afterPath="$PROJECT_DIR$/../MaxFlow/MaxMGraph.cpp" />
     </list>
     <ignored path="Total_Flow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,8 +51,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5815832">
-              <caret line="24" column="2" selection-start-line="0" selection-start-column="0" selection-end-line="162" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -147,7 +151,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -217,8 +221,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5815832">
-          <caret line="24" column="2" selection-start-line="0" selection-start-column="0" selection-end-line="162" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="5" />
           <folding />
         </state>
       </provider>
