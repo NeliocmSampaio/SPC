@@ -1,0 +1,3 @@
+/home/nelio/Codigos/SPC/Djikstra_Grafo_minha_tentativa/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nelio/Codigos/SPC/Djikstra_Grafo_minha_tentativa/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nelio/Codigos/SPC/Djikstra_Grafo_minha_tentativa/cmake-build-debug/CMakeFiles/Djikstra_Grafo_minha_tentativa.dir

@@ -1,0 +1,3 @@
+/home/nelio/Codigos/SPC/Graph/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nelio/Codigos/SPC/Graph/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nelio/Codigos/SPC/Graph/cmake-build-debug/CMakeFiles/Graph.dir

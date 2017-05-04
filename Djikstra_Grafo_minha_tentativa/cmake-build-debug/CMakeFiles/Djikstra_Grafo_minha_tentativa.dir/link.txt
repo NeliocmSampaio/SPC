@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/Djikstra_Grafo_minha_tentativa.dir/main.cpp.o  -o Djikstra_Grafo_minha_tentativa -rdynamic 
