@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/Caixas.dir/main.cpp.o  -o Caixas 
