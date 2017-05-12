@@ -1,0 +1,3 @@
+/home/nelio/Codigos/SPC/Prova2/Paises_em_Guerra/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nelio/Codigos/SPC/Prova2/Paises_em_Guerra/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nelio/Codigos/SPC/Prova2/Paises_em_Guerra/cmake-build-debug/CMakeFiles/Paises_em_Guerra.dir

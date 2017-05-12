@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/Paises_em_Guerra.dir/main.cpp.o  -o Paises_em_Guerra 
