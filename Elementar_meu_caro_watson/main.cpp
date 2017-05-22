@@ -1,3 +1,14 @@
+/*
+ * Nome:Nélio Cezar Muniz Sampaio
+ * Matricula: 2015042150
+ * Codigo do Problema: WCW  Problema: Elementar, meu caro Watson!
+ *
+ * O algoritmo conta o número mínimo de trocas ordenando o vetor da seguinte forma:
+ * para uma posição i, troca v[i] com a posição v[v[i]] enquanto ainda houver troca por fazer.
+ * quando a posição v[i] é igual à i+1, passa para a posição i+1 e recomeçam as trocas. Para
+ * cada troca feita, incrementa-se um contador.
+ * */
+
 #include <iostream>
 
 using namespace std;
@@ -26,6 +37,25 @@ int bubbleSort(int v[], int tam)
     }//while
     return cont;
 }//bubbleSort()
+
+int ordena(int v[], int t)
+{
+    int aux;
+    int cont = 0;
+
+    for(int i=0; i<t; i++)
+    {
+        if(i != v[i]-1)
+        {
+            aux = v[i];
+            v[i] = v[aux-1];
+            v[aux-1] = aux;
+            cont++;
+            i--;
+        }
+    }
+    return cont;
+}
 
 int contDesordenado(int v[], int t)
 {
@@ -62,7 +92,7 @@ int main() {
 
         leVetor(vet, n);
 
-        printf("%d\n", n - contDesordenado(vet, n));
+        printf("%d\n", ordena(vet, n));
     }//for
 
     return 0;
