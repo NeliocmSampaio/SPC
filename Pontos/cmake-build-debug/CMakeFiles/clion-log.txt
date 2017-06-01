@@ -1,0 +1,4 @@
+/home/nelio/Downloads/clion-2017.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/nelio/Codigos/SPC/Pontos
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/nelio/Codigos/SPC/Pontos/cmake-build-debug
