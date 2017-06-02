@@ -1,0 +1,3 @@
+/home/nelio/Codigos/SPC/Prova3/Brasil_and_Germany/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nelio/Codigos/SPC/Prova3/Brasil_and_Germany/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nelio/Codigos/SPC/Prova3/Brasil_and_Germany/cmake-build-debug/CMakeFiles/Brasil_and_Germany.dir

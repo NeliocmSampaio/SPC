@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/Brasil_and_Germany.dir/main.cpp.o  -o Brasil_and_Germany 

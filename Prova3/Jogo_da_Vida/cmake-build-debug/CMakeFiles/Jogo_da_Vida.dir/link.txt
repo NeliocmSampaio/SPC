@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/Jogo_da_Vida.dir/main.cpp.o  -o Jogo_da_Vida 

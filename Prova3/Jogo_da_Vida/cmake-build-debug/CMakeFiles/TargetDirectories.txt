@@ -1,0 +1,3 @@
+/home/nelio/Codigos/SPC/Prova3/Jogo_da_Vida/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nelio/Codigos/SPC/Prova3/Jogo_da_Vida/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nelio/Codigos/SPC/Prova3/Jogo_da_Vida/cmake-build-debug/CMakeFiles/Jogo_da_Vida.dir
