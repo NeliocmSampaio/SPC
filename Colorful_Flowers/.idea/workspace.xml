@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
-      <config projectName="Intersection" targetName="Intersection" />
+      <config projectName="Colorful_Flowers" targetName="Colorful_Flowers" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="false" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
@@ -11,8 +11,8 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="411771a0-f58f-4cf7-911a-ea0e1c181070" name="Default" comment="" />
-    <ignored path="Intersection.iws" />
+    <list default="true" id="4ecc6f7f-ea22-46bd-905b-5c7296227a15" name="Default" comment="" />
+    <ignored path="Colorful_Flowers.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,7 +27,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="Intersection" />
+    <favorites_list name="Colorful_Flowers" />
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -44,10 +44,10 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.2635658">
-              <caret line="125" column="8" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.3875969">
+              <caret line="10" column="65" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="1" />
               <folding>
-                <element signature="e#159#384#0" expanded="false" />
+                <element signature="e#565#584#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,7 +102,7 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Intersection" />
+              <option name="myItemId" value="Colorful_Flowers" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -115,30 +115,33 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Build All">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Intersection" TARGET_NAME="Intersection" CONFIG_NAME="Debug">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Colorful_Flowers" TARGET_NAME="Colorful_Flowers" CONFIG_NAME="Debug">
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Intersection" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Intersection" TARGET_NAME="Intersection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Intersection" RUN_TARGET_NAME="Intersection">
+    <configuration default="false" name="Colorful_Flowers" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Colorful_Flowers" TARGET_NAME="Colorful_Flowers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Colorful_Flowers" RUN_TARGET_NAME="Colorful_Flowers">
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Intersection" RUN_TARGET_NAME="Intersection" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Colorful_Flowers" RUN_TARGET_NAME="Colorful_Flowers" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Intersection" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Colorful_Flowers" />
       <item index="1" class="java.lang.String" itemvalue="Application.Build All" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="411771a0-f58f-4cf7-911a-ea0e1c181070" name="Default" comment="" />
-      <created>1497195613394</created>
+      <changelist id="4ecc6f7f-ea22-46bd-905b-5c7296227a15" name="Default" comment="" />
+      <created>1497218514350</created>
       <option name="number" value="Default" />
-      <updated>1497195613394</updated>
+      <updated>1497218514350</updated>
     </task>
     <servers />
   </component>
@@ -167,20 +170,19 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>115</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="3" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -194,10 +196,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2635658">
-          <caret line="125" column="8" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.3875969">
+          <caret line="10" column="65" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="1" />
           <folding>
-            <element signature="e#159#384#0" expanded="false" />
+            <element signature="e#565#584#0" expanded="true" />
           </folding>
         </state>
       </provider>
