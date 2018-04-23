@@ -123,6 +123,50 @@ public:
 		return 0;
 	}
 
+	int dfs(int v, std::vector<int> * ans, int low[], int visited[])
+	{
+		visited[v] = time++;
+		low[v] = visited[v];
+		int child = 0;
+
+		std::vector<int>::iterator it;
+		for(it=this->adj[v].begin(); it!=this->adj[v].end(); it++)
+		{
+			if(visited[*it]==-1)
+			{
+				child++;
+				int m = dfs(*it, ans, low, visited);
+				low[v] = low[v] < m ? low[v] : m;
+				if(visited[v]<=m && (v!=1 || child>=2))
+				{
+					(*ans).push_back(v);
+				}
+			}else{
+				low[v] = low[v] < visited[*it] ? low[v] : visited[*it];
+			}
+		}
+
+		return low[v];
+	}
+
+	vector<int> get_art()
+	{
+		std::vector<int> ans;
+		time = 0;
+		int low[this->v+10], visited[this->v+10], parent[this->v+10];
+		int cont = 0;
+
+		for(int i=1; i<=this->v; i++)
+		{
+			visited[i] = -1;
+			low[i] = infinito;
+		}//for
+
+		dfs(v, &ans, low, visited);
+
+		return ans;
+	}
+
 	void assignNum(int v)
 	{
 		
@@ -173,7 +217,8 @@ int main()
         }
 
 		//G.print();
-		G.ArticulatingPoints();
+		//G.ArticulatingPoints();
+		printf("%d\n", G.get_art().size());
 
         scanf("%d", &n);
 		getchar();
